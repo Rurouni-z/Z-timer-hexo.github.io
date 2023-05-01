@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>YOLOv1初体验 | 悠闲の小屋</title><meta name="author" content="Rurouni"><meta name="copyright" content="Rurouni"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="下载VOC2012数据集，这里用的是镜像：镜像网址、Train&#x2F;Validation dataset、test dataset注意直接复制链接，浏览器不会接管下载，需要打开迅雷（最好有超级会员）原本想复现的，师兄告诉我还是直接看v3好，故溜~参考链接：  目标检测：YOLOV1 YOLOv1损失函数 YOLO v1深入理解 可以看看评论区 YOLO：实时快速目标检测 可以看看评论区 【目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YOLOv1初体验">
+<meta property="og:url" content="http://keepjolly.com/archives/yolov1-first-try">
+<meta property="og:site_name" content="悠闲の小屋">
+<meta property="og:description" content="下载VOC2012数据集，这里用的是镜像：镜像网址、Train&#x2F;Validation dataset、test dataset注意直接复制链接，浏览器不会接管下载，需要打开迅雷（最好有超级会员）原本想复现的，师兄告诉我还是直接看v3好，故溜~参考链接：  目标检测：YOLOV1 YOLOv1损失函数 YOLO v1深入理解 可以看看评论区 YOLO：实时快速目标检测 可以看看评论区 【目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg">
+<meta property="article:published_time" content="2022-05-27T08:14:59.488Z">
+<meta property="article:modified_time" content="2023-02-25T12:59:03.142Z">
+<meta property="article:author" content="Rurouni">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="pytorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg"><link rel="shortcut icon" href="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/web_icon.ico"><link rel="canonical" href="http://keepjolly.com/archives/yolov1-first-try"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"Z1QBIVDX3I","apiKey":"1668f13b50de82ca6c66fd56130468b2","indexName":"my-hexo-blog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":700},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Rurouni","link":"链接: ","source":"来源: 悠闲の小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'YOLOv1初体验',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-25 20:59:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/change.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw hide"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="悠闲の小屋"><img class="site-icon" src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo%2Fweb_logo.png"/><span class="site-name">悠闲の小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw hide"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">YOLOv1初体验</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-27T08:14:59.488Z" title="发表于 2022-05-27 16:14:59">2022-05-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-25T12:59:03.142Z" title="更新于 2023-02-25 20:59:03">2023-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5/">深度学习实践</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>下载VOC2012数据集，这里用的是镜像：<a target="_blank" rel="noopener" href="https://pjreddie.com/projects/pascal-voc-dataset-mirror/">镜像网址</a>、<a target="_blank" rel="noopener" href="http://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar">Train&#x2F;Validation dataset</a>、<a target="_blank" rel="noopener" href="http://pjreddie.com/media/files/VOC2012test.tar">test dataset</a><br>注意直接复制链接，浏览器不会接管下载，需要打开迅雷（最好有超级会员）<br>原本想复现的，师兄告诉我还是直接看v3好，故溜~<br>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yifanrensheng/p/12871235.html#_label4_1">目标检测：YOLOV1</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37619128/article/details/122385654">YOLOv1损失函数</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cad68ca85e27">YOLO v1深入理解</a> 可以看看评论区</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25045711">YOLO：实时快速目标检测</a> 可以看看评论区</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Roaddd/article/details/114266308">【目标检测】单阶段算法–YOLOv1详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/70387154">【论文解读】Yolo三部曲解读——Yolov1</a> 可以看看评论区</li>
+</ul>
+<h2 id="YOLOv1简介"><a href="#YOLOv1简介" class="headerlink" title="YOLOv1简介"></a>YOLOv1简介</h2><p>相比于 R-CNN 系列的方法，YOLO提供了另外一种思路，将 Object Detection 的问题转化成一个 Regression 问题。给定输入图像，直接在图像的多个位置上回归出目标的bounding box以及其分类类别。YOLO是一个可以<strong>一次性预测</strong>多个Box位置和类别的卷积神经网络，能够实现端到端的目标检测和识别，其最大的优势就是速度快。YOLO没有选择滑动窗口（silding window）或提取proposal的方式训练网络，而是直接选用整图训练模型。这样做的好处在于可以更好的区分目标和背景区域，相比之下，采用proposal训练方式的Fast-R-CNN常常把背景区域误检为特定目标。但是YOLO目标区域定位误差更大（特别是小目标）。<br>优点：</p>
+<blockquote>
+<p>First, YOLO is extremely fast. Since we frame detection as a regression problem we don’t need a complex pipeline.（这里的回归问题不是特别理解。回归的目的是预测数值型的目标值，输入图像经过一次网络，便能得到图像中所有物体的位置和其所属类别及相应的置信概率）<br>Second, YOLO reasons globally about the image when making predictions. Unlike sliding window and region proposal-based techniques, YOLO sees the entire image.<br>Third, YOLO learns generalizable representations of objects. When trained on natural images and tested on art- work, YOLO outperforms top detection methods like DPM and R-CNN by a wide margin.</p>
+</blockquote>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653536968541-23b5ea20-24dc-4fe6-ad35-f550474f62b2.png?imageMogr2/format/webp" alt="image.png"></h2><p> Our system models detection as a regression problem. It divides the image into an S × S grid and for each grid cell predicts B bounding boxes, confidence for those boxes, and C class probabilities. These predictions are encoded as an S × S × (B ∗ 5 + C) tensor.<br>实现方案：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cad68ca85e27">Link</a>，大致下面这个区域，因为都是原文摘抄，所以不全部复制了。</p>
+<blockquote>
+<p><strong>1）结构</strong><br>去掉候选区这个步骤以后，YOLO的结构非常简单，就是单纯的卷积、池化最后加了两层全连接。单看网络结构的话，和普通的CNN对象分类网络几乎没有本质的区别，最大的差异是最后输出层用线性函数做激活函数，因为需要预测bounding box的位置（数值型），而不仅仅是对象的概率。所以粗略来说，YOLO的整个结构就是输入图片经过神经网络的变换得到一个输出的张量，如下图所示。</p>
+</blockquote>
+<ul>
+<li>另外文中将图片resize为448*448，一些图片会发生很大的变形，所以尽量训练数据和测试数据分布保持一致。</li>
+<li>YOLO并没有预先设置2个bounding box的大小和形状，也没有对每个bounding box分别输出一个对象的预测。它的意思仅仅是对一个对象预测出2个bounding box，选择预测得相对比较准的那个。这里采用2个bounding box，有点不完全算监督算法，而是像进化算法。如果是监督算法，我们需要<strong>事先</strong>根据样本就能给出一个正确的bounding box作为回归的目标。但YOLO的2个bounding box事先并不知道会在什么位置，只有经过前向计算，网络会输出2个bounding box，这两个bounding box与样本中对象实际的bounding box计算IOU。这时才能确定，IOU值大的那个bounding box，作为负责预测该对象的bounding box。<br>训练开始阶段，网络预测的bounding box可能都是乱来的，但总是选择IOU相对好一些的那个，随着训练的进行，每个bounding box会逐渐擅长对某些情况的预测（可能是对象大小、宽高比、不同类型的对象等）。所以，这是一种进化或者非监督学习的思想。</li>
+<li>responsible： We assign one predictor to be “responsible” for predicting an object based on which prediction has the highest current IOU with the ground truth. This leads to specialization between the bounding box predictors. Each predictor gets better at predicting certain sizes, aspect ratios, or classes of object, improving overall recall.  </li>
+<li>设网格数量为 S<em>S，每个网格产生B个边框，数据集包含C个不同的对象。这时，输出的长度为：$(C+B</em>(4+1))<em>S</em>S$</li>
+</ul>
+<h2 id="论文关键部分翻译：Unified-Detection"><a href="#论文关键部分翻译：Unified-Detection" class="headerlink" title="论文关键部分翻译：Unified Detection"></a>论文关键部分翻译：Unified Detection</h2><p>We unify the separate components of object detection into a single neural network. Our network uses features from the entire image to predict each bounding box. It also predicts all bounding boxes across all classes for an image simultaneously. This means our network reasons globally about the full image and all the objects in the image. The YOLO design enables end-to-end training and realtime speeds while maintaining high average precision. </p>
+<p>我们将目标检测的不同组件整合到一个神经网络中。我们的网络使用整张图片的特征来预测每一个边界框。它还同时预测图像的所有类中的每一个边界框。这表示我们的网络全局推理整张图片和图片上的所有对象。YOLO的设计可以进行端到端训练和达到实时的速度并且保持相对高的准确度。<br>Our system divides the input image into an_ S _× <em>S</em> grid. If the center of an object falls into a grid cell, that grid cell is responsible for detecting that object. </p>
+<p>我们的系统将输入图片分成S×S的网格。如果一个对象的中心点落在某个网格内，则这个网格负责预测这个对象。（计算出该Object的bounding box的中心位置，这个中心位置落在哪个grid，该grid对应的输出向量中该对象的类别概率是1（该gird负责预测该对象），所有其它grid对该Object的预测概率设为0（不负责预测该对象）<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cad68ca85e27">参考网址</a>。另外最多能检测出S*S个物体，如果每个物体的中心点在每个网格内）<br>Each grid cell predicts <em>B</em> bounding boxes and confidence scores for those boxes. These confidence scores reflect how confident the model is that the box contains an object and also how accurate it thinks the box is that it predicts. Formally we define confidence as $\operatorname{Pr}(\text { Object }) * \mathrm{IOU}_{\text {pred }}^{\text {truth }}$. If no object exists in that cell, the confidence scores should be zero. Otherwise we want the confidence score to equal the intersection over union (IOU) between the predicted box and the ground truth. </p>
+<p>每个网格预测B个bboxes和这些boxes的置信度。其中置信度反映了模型对这个box包含对象的信任度和模型认为这个box预测有无对象的准确度。我们定义置信度为有无对象的预测值（非0即1）* truth box和pred box的交并比。如果没有object在网格内，则置信度应为0. 否则我们将置信度等于预测框和真实框的交并比。</p>
+<p>Each bounding box consists of 5 predictions: <em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>,_ _and confidence. The (<em>x,</em> <em>y</em>) coordinates represent the center of the box relative to the bounds of the grid cell. The width and height are predicted relative to the whole image. Finally the confidence prediction represents the IOU between the predicted box and any ground truth box. </p>
+<p>每个bbox包含5个预测值：x, y, w, h and 置信度。(x, y)表示bbox相对于网格单元格边界的中心坐标。预测的高宽相对于整张图片的高宽。最后，置信度预测表示pred and truth 的交并比</p>
+<p>Each grid cell also predicts <em>C</em> conditional class probabilities, $\operatorname{Pr}\left(\text { Class }<em>{i} \mid \text { Object }\right)$. These probabilities are conditioned on the grid cell containing an object. We only predict one set of class probabilities per grid cell, regardless of the number of boxes</em> B_. </p>
+<p>每个网格也预测C个条件类型概率，即存在对象时，属于某类别的概率。这些概率以网格内包含对象为条件。我们仅预测每个网格的一系列的类别概率，不管bbox的个数。（相当于每个网格只输出一个类型概率，而不会输出bbox的类别概率，bbox输出置信度）<br>At test time we multiply the conditional class probabilities and the individual box confidence predictions, 	$\begin{equation*} \operatorname{Pr}\left(\text { Class }<em>{i} \mid \text { Object }\right) * \operatorname{Pr}(\text { Object }) * \mathrm{IOU}</em>{\text {pred }}^{\text {truth }}&#x3D;\operatorname{Pr}\left(\text { Class }<em>{i}\right) * \mathrm{IOU}</em>{\text {pred }}^{\text {truth }} \end{equation*}$<br>which gives us class-specific confidence scores for each box. These scores encode both the probability of that class appearing in the box and how well the predicted box fits the object. </p>
+<p>在测试阶段我们将conditional class probabilities乘上每个bbox的置信度预测值，公式中i指的是类别个数，所以有$\operatorname{Pr}\left(\text { Class }<em>{1}\right) * \mathrm{IOU}</em>{\text {pred }}^{\text {truth }}、 \operatorname{Pr}\left(\text { Class }<em>{2}\right) * \mathrm{IOU}</em>{\text {pred }}^{\text {truth }}…\operatorname{Pr}\left(\text { Class }<em>{i}\right) * \mathrm{IOU}</em>{\text {pred }}^{\text {truth }}$，这样子使我们得到关于每个bbox的特定类的置信度。这些值也反映了bounding box是否含有Object和bounding box坐标的准确度。</p>
+<p>最后在PASCAL VOC中 S&#x3D;7，B&#x3D;2，C&#x3D;20，最终输出为7×7×30的标量（30&#x3D;(4+1)*2+20, 4是xywh，1是置信度，2是bbox个数，20类别数）</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>图片来源：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yifanrensheng/p/12871235.html#_label4_1">Link</a></p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653446878220-7d2da09d-efaa-4f2f-8bcf-30e14fdc5bfb.png?imageMogr2/format/webp" alt="image.png"></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653546402345-b302bc1a-36f6-439c-ac36-8f3e4e24b882.png?imageMogr2/format/webp" alt="image.png"></h2><p> <img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653447175456-063291b7-cbdc-47b6-b461-90e3d88d7593.png?imageMogr2/format/webp" alt="image.png"><br>$1_{ij}^{obj}$表示第i个网格中的第j个bbox有对象<br>$1_{ij}^{noobj}$表示第i个网格中的第j个bbox无对象</p>
+<ul>
+<li>第一行是预测框的中心，只计算含有物体时的bbox(IOU大的那个)损失值，因为$1_{ij}^{obj}$无对象其值为0。</li>
+<li>第二行是预测框的高宽，与第一行不同的是wh取了根号，如果不取根号，损失函数则偏向于调整大尺寸的预测框，因为修改小尺寸的话对loss有较大的影响，如h&#x3D;1000，error&#x3D;25；h&#x3D;100，error&#x3D;25的情况下，应该小框的误差要严重，因此loss要加大，但是不取平方根则1000-975 &#x3D; 100-75， Sum-squared error also equally weights errors in large boxes and small boxes，加了根号则sqrt(1000)-sqrt(975) ≈0.4 &lt; sqrt(100)-sqrt(75) ≈1.33，此时小框误差就体现出来了。平方根函数的上升趋势是递减的，越来越平缓（评论最后一页：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cad68ca85e27">Link</a>）。</li>
+<li>第三行是预测框包含对象时的置信度</li>
+<li>第四行是预测框不包含对象时的置信度，这里解释挺多的，我也分辨不过来哪个是对的，故全复制过来了。<ul>
+<li>第4行是不存在对象的bounding box的置信度误差。因为不存在对象的bounding box应该老老实实的说”我这里没有对象”，也就是输出尽量低的置信度。如果它不恰当的输出较高的置信度，会与真正”负责”该对象预测的那个bounding box产生混淆。其实就像对象分类一样，正确的对象概率最好是1，所有其它对象的概率最好是0。</li>
+<li>如果一些栅格中没有object（一幅图中这种栅格很多），那么就会将这些栅格中的bounding box的confidence 置为0，相比于较少的有object的栅格，这些不包含物体的栅格对梯度更新的贡献会远大于包含物体的栅格对梯度更新的贡献，这会导致网络不稳定甚至发散。</li>
+<li>不包含obj的置信度损失就是包含两部分，一部分是包含obj的grid cell中的两个BBox中不负责预测的那个BBox，另外一部分是不包含obj的grid cell的bbox。损失计算时，负责预测物体的bbox的便签值就是IOU的值，不负责预测物体的bbox的标签值就是0（包含上述所描述的两部分），预测值就是网络直接输出出来的，计算时就是两者相减后取平方。</li>
+<li>后续我的理解，可以看到第二幅图，因为每个网格都会输出预测值，即使bbox的C较小，$(C_i-C^{hat}_i)&#x3D;(0-0.2)^2<em>48</em>2$也会变得很大(48是包含对象时49-1，然后*bbox个数，其实还要+1，因为IOU小的那个也被淘汰了)，所以要乘个小数</li>
+</ul>
+</li>
+<li>第五行是网格包含物体时的物体类别概率。</li>
+</ul>
+<h2 id="训练过程和推理interference过程"><a href="#训练过程和推理interference过程" class="headerlink" title="训练过程和推理interference过程"></a>训练过程和推理interference过程</h2><h3 id="train"><a href="#train" class="headerlink" title="train"></a>train</h3><p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653550530915-bf70a1d9-4f2c-4c8f-b0c5-530cc486582f.png?imageMogr2/format/webp" alt="image.png"><br>作者采用ImageNet 1000-class 数据集来预训练卷积层。预训练阶段，采用上图网络中的前20卷积层（包括池化层），外加average-pooling 层和全连接层。然后，将模型转换为检测模型使用DarkNet架构并用于interference阶段。作者向预训练模型中加入了4个卷积层和两层全连接层，提高了模型输入分辨率（224×224-&gt;448×448）。最后一层预测类别概率和bounding box坐标值。bounding box的宽和高通过输入图像宽和高归一化到0-1区间。最后一层采用linear activation，其它层使用 leaky rectified linear。作者采用sum-squared error为目标函数来优化，增加bounding box loss权重，减少置信度权重，实验中，设定为$λ_{coord} &#x3D;5$,$λ_{noobj} &#x3D; .5$。<br>作者还采用了dropout和 data augmentation来预防过拟合。dropout值为0.5；data augmentation包括：random scaling，translation，adjust exposure和saturation。</p>
+<h3 id="inference"><a href="#inference" class="headerlink" title="inference"></a>inference</h3><p>训练好的YOLO网络，输入一张图片，将输出一个 7<em>7</em>30 的张量（tensor）来表示图片中所有网格包含的对象（概率）以及该对象可能的2个位置（bounding box）和置信度。<br>因为一些大物体或者靠近多个网格的边界的物体会产生多个预测框，YOLO采用NMS（Non-maximal suppression，非极大值抑制）算法来减少。</p>
+<h3 id="limitation"><a href="#limitation" class="headerlink" title="limitation"></a>limitation</h3><ol>
+<li>YOLO的每一个网格只预测两个boxes，一种类别。这导致模型对相邻目标预测准确率下降。因此，YOLO对成队列的目标（如 一群鸟）识别准确率较低。</li>
+<li>YOLO是从数据中学习预测bounding boxes，因此，对新的或者不常见角度的目标无法识别。</li>
+<li>YOLO的loss函数对small bounding boxes和large bounding boxes的error平等对待，影响了模型识别准确率。因为对于小的bounding boxes，small error影响更大。主要识别错误来源是不正确的定位框。</li>
+</ol>
+<h3 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h3><p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/yolov1/1653554508484-c0c71686-f569-4709-91cf-76565620cda4.png?imageMogr2/format/webp" alt="image.png"><br>预测结果包括以下几类：<br>正确：类别正确，IOU&gt;0.5<br>定位：类别正确，0.1&lt;IOU&lt;0.5<br>类似：类别相似，IOU&gt;0.1<br>其它：类别错误，IOU&gt;0.1<br>背景：IOU&lt;0.1</p>
+<h2 id="文中的小技巧"><a href="#文中的小技巧" class="headerlink" title="文中的小技巧"></a>文中的小技巧</h2><ol>
+<li>回归offset代替直接回归坐标<blockquote>
+<p>We parametrize the bounding box x and y coordinates to be offsets of a particular grid cell location so they are also bounded between 0 and 1</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>(x, y)不直接回归中心点坐标数值，而是回归相对于格点左上角坐标的位移值。</strong> 例如，第一个格点中物体坐标为 (2.3, 3.6) ，另一个格点中的物体坐标为(4.2, 4.6)，这四个数值让神经网络暴力回归，有一定难度。所以这里的offset是指，既然格点已知，那么物体中心点的坐标一定在格点正方形里，相对于格点左上角的位移值一定在区间[0, 1)中。让神经网络去预测 (0.3, 0.6) 与 (0.2, 0.6) 会更加容易，在使用时，加上格点左上角坐标(2, 3)、(4, 4)即可。</p>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><p>为什么一个网格只检测一个目标：<a target="_blank" rel="noopener" href="https://www.zdaiot.com/DeepLearningApplications/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/%E5%AE%9E%E6%97%B6%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%EF%BC%9AYOLO%E3%80%81YOLOv2%E4%BB%A5%E5%8F%8AYOLOv3/">实时目标检测</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://keepjolly.com">Rurouni</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://keepjolly.com/archives/yolov1-first-try">http://keepjolly.com/archives/yolov1-first-try</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://keepjolly.com" target="_blank">悠闲の小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/pytorch/">pytorch</a></div><div class="post_share"><div class="social-share" data-image="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/nomoney" target="_blank"><img class="post-qr-code-img" src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/nomoney" alt="真的有人会打赏吗"/></a><div class="post-qr-code-desc">真的有人会打赏吗</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/morphology-erosion" title="形态学--腐蚀运算详细过程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">形态学--腐蚀运算详细过程</div></div></a></div><div class="next-post pull-right"><a href="/archives/picgo-install-plugin" title="picgo安装插件不成功"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">picgo安装插件不成功</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/pca%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABguipython" title="PCA人脸识别+GUI+python"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-22</div><div class="title">PCA人脸识别+GUI+python</div></div></a></div><div><a href="/archives/python-problem" title="Python编程 遇到的问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">Python编程 遇到的问题</div></div></a></div><div><a href="/archives/leetcode-three-day-three-code-1" title="(leetcode) 三日三题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-10</div><div class="title">(leetcode) 三日三题</div></div></a></div><div><a href="/archives/leetcodethree-day-three-code" title="(leetcode) 三日三题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-30</div><div class="title">(leetcode) 三日三题</div></div></a></div><div><a href="/archives/leetcode-week-1" title="(leetcode) 一周七题.md"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-24</div><div class="title">(leetcode) 一周七题.md</div></div></a></div><div><a href="/archives/leetcode-one-question-per-day" title="(leetcode) 三日三题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-26</div><div class="title">(leetcode) 三日三题</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#YOLOv1%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">YOLOv1简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E5%85%B3%E9%94%AE%E9%83%A8%E5%88%86%E7%BF%BB%E8%AF%91%EF%BC%9AUnified-Detection"><span class="toc-number">3.</span> <span class="toc-text">论文关键部分翻译：Unified Detection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">5.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number">6.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E5%92%8C%E6%8E%A8%E7%90%86interference%E8%BF%87%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">训练过程和推理interference过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#train"><span class="toc-number">7.1.</span> <span class="toc-text">train</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inference"><span class="toc-number">7.2.</span> <span class="toc-text">inference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limitation"><span class="toc-number">7.3.</span> <span class="toc-text">limitation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90"><span class="toc-number">7.4.</span> <span class="toc-text">错误分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%B8%AD%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-number">8.</span> <span class="toc-text">文中的小技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-3"><span class="toc-number">9.</span> <span class="toc-text"></span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rurouni</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://www.keepjolly.com/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><script data-pjax type="text/javascript" src="/js/change.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>

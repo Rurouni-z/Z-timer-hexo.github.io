@@ -2,14 +2,14 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://example.com/</loc>
+        <loc>http://keepjolly.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>http://example.com/2023/04/28/hello-world/</loc>
+        <loc>http://keepjolly.com/undefined.html</loc>
         <lastmod>2023-04-28T13:07:26.306Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -17,7 +17,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/26/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E8%B7%AF%E4%B8%8A-three-d-reconstruction-1/</loc>
+        <loc>http://keepjolly.com/archives/three-d-reconstruction-1.html</loc>
         <lastmod>2023-03-26T01:41:47.726Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -25,7 +25,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/26/C++%E5%AD%A6%E4%B9%A0-cplusplus-learn/</loc>
+        <loc>http://keepjolly.com/archives/cplusplus-learn.html</loc>
         <lastmod>2023-03-26T01:41:29.925Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -33,7 +33,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/11/Python%E7%BC%96%E7%A8%8B%20%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-python-problem/</loc>
+        <loc>http://keepjolly.com/archives/python-problem.html</loc>
         <lastmod>2023-03-11T12:27:34.663Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -41,7 +41,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/11/%E5%B0%8F%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BB%BC%E8%BF%B0-%E5%8D%8A%E6%88%90%E5%93%81-small-target-detection/</loc>
+        <loc>http://keepjolly.com/archives/small-target-detection.html</loc>
         <lastmod>2023-03-11T12:25:51.917Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -49,7 +49,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/11/Java%20%E5%AD%A6%E4%B9%A0%20%E5%8D%8A%E6%88%90%E5%93%81-java-study/</loc>
+        <loc>http://keepjolly.com/archives/java-study.html</loc>
         <lastmod>2023-03-11T12:23:47.173Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -57,7 +57,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/03/11/ColMap%E4%BD%BF%E7%94%A8-colmap-use/</loc>
+        <loc>http://keepjolly.com/archives/colmap-use.html</loc>
         <lastmod>2023-03-11T12:17:43.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -65,7 +65,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/05/27/YOLOv1%E5%88%9D%E4%BD%93%E9%AA%8C-yolov1-first-try/</loc>
+        <loc>http://keepjolly.com/archives/yolov1-first-try.html</loc>
         <lastmod>2023-02-25T12:59:03.142Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -73,7 +73,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2023/01/08/python%20%E4%B8%8Epython%E9%80%9A%E4%BF%A1%E3%80%81python%E8%B0%83%E7%94%A8c++%20%E5%8A%A8%E6%80%81%E5%BA%93%E8%BF%94%E5%9B%9E%E6%A3%80%E6%B5%8B%E7%BB%93%E6%9E%9C-python-and-ctypes/</loc>
+        <loc>http://keepjolly.com/archives/python-and-ctypes.html</loc>
         <lastmod>2023-01-08T03:22:28.082Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -81,7 +81,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/12/15/Linux%20%E4%B8%A4%E5%8F%B0%E8%AE%BE%E5%A4%87%E7%94%A8%E7%BD%91%E7%BA%BF%E9%80%9A%E4%BF%A1-linux-two-device-directly-communicate/</loc>
+        <loc>http://keepjolly.com/archives/linux-two-device-directly-communicate.html</loc>
         <lastmod>2022-12-15T11:51:28.162Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -89,7 +89,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/06/13/2022%E5%B9%B4%E7%90%90%E8%A8%80-postgraduate-talk/</loc>
+        <loc>http://keepjolly.com/archives/postgraduate-talk.html</loc>
         <lastmod>2022-11-27T02:10:31.153Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -97,7 +97,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/10/16/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A2%98-data-analysis/</loc>
+        <loc>http://keepjolly.com/archives/data-analysis.html</loc>
         <lastmod>2022-11-26T06:29:06.289Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -105,7 +105,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/11/16/opencv%E6%8F%90%E9%AB%98%E6%91%84%E5%83%8F%E5%A4%B4%E5%88%86%E8%BE%A8%E7%8E%87%E6%97%B6%EF%BC%8C%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4-opencv-set-high-resolution-cant-open-camera/</loc>
+        <loc>http://keepjolly.com/archives/opencv-set-high-resolution-cant-open-camera.html</loc>
         <lastmod>2022-11-16T08:52:21.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -113,7 +113,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/08/25/%E3%80%8A%E5%A4%AA%E7%A9%BA%E5%A0%A1%E5%9E%92%E5%8D%A1%E6%8B%89%E7%8B%84%E5%8A%A0%E3%80%8B%E7%BB%88%E6%9E%81%E6%97%A0%E5%89%A7%E9%80%8F%E8%A7%82%E5%BD%B1%E9%A1%BA%E5%BA%8F%E6%8C%87%E5%8D%97+%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5-the-ultimate-battlestar-galactica-spoiler-free-viewing-order/</loc>
+        <loc>http://keepjolly.com/archives/the-ultimate-battlestar-galactica-spoiler-free-viewing-order.html</loc>
         <lastmod>2022-08-27T08:09:00.618Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -121,7 +121,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/08/16/Delving%20into%20Deep%20Imbalanced%20Regression%E7%BF%BB%E8%AF%91-delving-into-dir-translation/</loc>
+        <loc>http://keepjolly.com/archives/delving-into-dir-translation.html</loc>
         <lastmod>2022-08-17T14:00:19.543Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -129,7 +129,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/08/17/Delving%20into%20Deep%20Imbalanced%20Regression%E7%AC%94%E8%AE%B0-dir-note/</loc>
+        <loc>http://keepjolly.com/archives/dir-note.html</loc>
         <lastmod>2022-08-17T13:59:05.186Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -137,7 +137,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/08/17/%E8%87%AA%E7%94%A8-zi-yong/</loc>
+        <loc>http://keepjolly.com/archives/zi-yong.html</loc>
         <lastmod>2022-08-17T02:55:45.884Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -145,7 +145,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/07/31/%E6%B8%85%E6%94%B6%E8%97%8F%E7%94%A8-clean-collection/</loc>
+        <loc>http://keepjolly.com/archives/clean-collection.html</loc>
         <lastmod>2022-07-31T11:16:51.500Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -153,7 +153,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/05/31/picgo%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95+%E8%85%BE%E8%AE%AF%E4%BA%91-picgo-jin-jie-wan-fa--teng-xun-yun/</loc>
+        <loc>http://keepjolly.com/archives/picgo-jin-jie-wan-fa--teng-xun-yun.html</loc>
         <lastmod>2022-05-31T14:45:13.465Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -161,7 +161,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/05/31/picgo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E4%B8%8D%E6%88%90%E5%8A%9F-picgo-install-plugin/</loc>
+        <loc>http://keepjolly.com/archives/picgo-install-plugin.html</loc>
         <lastmod>2022-05-31T13:47:49.634Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -169,7 +169,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/05/10/%E5%BD%A2%E6%80%81%E5%AD%A6--%E8%85%90%E8%9A%80%E8%BF%90%E7%AE%97%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B-morphology-erosion/</loc>
+        <loc>http://keepjolly.com/archives/morphology-erosion.html</loc>
         <lastmod>2022-05-10T12:17:05.138Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -177,7 +177,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/30/leetcode%E4%B8%80%E5%91%A8%E5%85%AD%E9%A2%98md-leetcode-one-week-six-ans/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-one-week-six-ans.html</loc>
         <lastmod>2022-04-30T06:51:04.706Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -185,7 +185,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/24/leetcode%E4%B8%80%E5%91%A8%E4%B8%83%E9%A2%98md-leetcode-week-1/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-week-1.html</loc>
         <lastmod>2022-04-24T06:28:45.165Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -193,7 +193,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/02/22/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E9%9B%86%E5%90%88-software-installation-set/</loc>
+        <loc>http://keepjolly.com/archives/software-installation-set.html</loc>
         <lastmod>2022-04-23T02:18:05.783Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -201,7 +201,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/16/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F%E9%80%8F%E6%98%8Eor%E5%8D%8A%E9%80%8F%E6%98%8E-wei-xin-tou-xiang-tou-ming-or-ban-tou-ming/</loc>
+        <loc>http://keepjolly.com/archives/wei-xin-tou-xiang-tou-ming-or-ban-tou-ming.html</loc>
         <lastmod>2022-04-16T13:34:50.282Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -209,7 +209,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/16/leetcode%E5%9B%9B%E6%97%A5%E5%9B%9B%E9%A2%98-leetcode-four-day-four-ans/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-four-day-four-ans.html</loc>
         <lastmod>2022-04-16T08:41:20.711Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -217,7 +217,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/13/leetcode%E5%9B%9B%E6%97%A5%E5%9B%9B%E9%A2%98-leetcode-si-ri-si-ti/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-si-ri-si-ti.html</loc>
         <lastmod>2022-04-13T05:04:48.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -225,7 +225,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/12/leetcode%E5%9B%9B%E6%97%A5%E5%9B%9B%E9%A2%98-leetcode-four-day-four-answer-1/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-four-day-four-answer-1.html</loc>
         <lastmod>2022-04-12T02:45:54.126Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -233,7 +233,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/05/leetcode%E4%B8%89%E6%97%A5%E4%B8%89%E9%A2%98-leetcode-three-day-three-code/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-three-day-three-code.html</loc>
         <lastmod>2022-04-10T02:42:38.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -241,7 +241,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/10/leetcode%20%E4%B8%89%E6%97%A5%E4%B8%89%E9%A2%98-leetcode-three-day-three-code-1/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-three-day-three-code-1.html</loc>
         <lastmod>2022-04-10T02:41:59.589Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -249,7 +249,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/04/04/Windows%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6-windows-software/</loc>
+        <loc>http://keepjolly.com/archives/windows-software.html</loc>
         <lastmod>2022-04-04T11:25:11.291Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -257,7 +257,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/26/leetcode%E4%B8%89%E6%97%A5%E4%B8%89%E9%A2%98-leetcode-one-question-per-day/</loc>
+        <loc>http://keepjolly.com/archives/leetcode-one-question-per-day.html</loc>
         <lastmod>2022-04-03T11:00:49.630Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -265,7 +265,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/30/leetcode%20%E4%B8%89%E6%97%A5%E4%B8%89%E9%A2%98-leetcodethree-day-three-code/</loc>
+        <loc>http://keepjolly.com/archives/leetcodethree-day-three-code.html</loc>
         <lastmod>2022-03-30T06:53:45.377Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -273,7 +273,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/19/Halo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA---%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99-halo-blog-build-a-website-of-your-own/</loc>
+        <loc>http://keepjolly.com/archives/halo-blog-build-a-website-of-your-own.html</loc>
         <lastmod>2022-03-28T10:19:32.685Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -281,7 +281,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/16/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90-gu-ge-liu-lan-qi-wu-fa-bo-fang-yin-le/</loc>
+        <loc>http://keepjolly.com/archives/gu-ge-liu-lan-qi-wu-fa-bo-fang-yin-le.html</loc>
         <lastmod>2022-03-16T05:59:01.194Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -289,7 +289,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/02/22/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%20%E9%85%8D%E7%BD%AE%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A%E7%BC%96%E7%A8%8Bjupyter%E7%8E%AF%E5%A2%83-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A%E7%8E%AF%E5%A2%83/</loc>
+        <loc>http://keepjolly.com/archives/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A%E7%8E%AF%E5%A2%83.html</loc>
         <lastmod>2022-03-14T12:06:00.600Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -297,7 +297,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/13/%E5%AE%89%E8%A3%85Java(jdk)%E5%8F%8Ajdk%E7%89%88%E6%9C%AC%E6%8E%A2%E8%AE%A8-java-install-and-version-talk/</loc>
+        <loc>http://keepjolly.com/archives/java-install-and-version-talk.html</loc>
         <lastmod>2022-03-13T10:39:21.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -305,7 +305,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/13/OpenSSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6-openssl-install-and-get-sslcert/</loc>
+        <loc>http://keepjolly.com/archives/openssl-install-and-get-sslcert.html</loc>
         <lastmod>2022-03-13T02:45:24.654Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -313,7 +313,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/02/16/Python%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A61-python-questions-1/</loc>
+        <loc>http://keepjolly.com/archives/python-questions-1.html</loc>
         <lastmod>2022-03-12T11:29:26.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -321,7 +321,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/12/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
+        <loc>http://keepjolly.com/archives/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html</loc>
         <lastmod>2022-03-12T06:49:54.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -329,7 +329,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/11/python%20%E4%BD%BF%E7%94%A8pathlib%E8%A7%A3%E5%86%B3%E5%90%8C%E5%90%8D%E4%B8%8D%E5%90%8C%E5%90%8E%E7%BC%80(%E6%89%A9%E5%B1%95%E5%90%8D)%E7%9A%84%E6%96%87%E4%BB%B6%E7%9A%84%E8%BD%AC%E7%A7%BB-pythontransferfileswiththesamename/</loc>
+        <loc>http://keepjolly.com/archives/pythontransferfileswiththesamename.html</loc>
         <lastmod>2022-03-11T09:11:49.912Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -337,7 +337,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/10/%E5%B7%A5%E7%A8%8B%E4%BC%A6%E7%90%86%EF%BC%882021%E6%98%A5%EF%BC%89%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88-gong-cheng-lun-li-2021-chun--di-yi-zhang-ke-hou-xi-ti-da-an/</loc>
+        <loc>http://keepjolly.com/archives/gong-cheng-lun-li-2021-chun--di-yi-zhang-ke-hou-xi-ti-da-an.html</loc>
         <lastmod>2022-03-10T05:27:38.740Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -345,7 +345,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/03/10/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%EF%BC%88%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF%EF%BC%89%E7%AD%94%E6%A1%88%E9%A2%98%E5%BA%93-dialecticsofnature-xue-tang-zai-xian--answer--dataset/</loc>
+        <loc>http://keepjolly.com/archives/dialecticsofnature-xue-tang-zai-xian--answer--dataset.html</loc>
         <lastmod>2022-03-10T05:26:43.520Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -353,7 +353,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/02/22/PCA%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB+GUI+python-pca%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABguipython/</loc>
+        <loc>http://keepjolly.com/archives/pca%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABguipython.html</loc>
         <lastmod>2022-02-22T08:26:12.724Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -361,7 +361,7 @@
     </url>
 
     <url>
-        <loc>http://example.com/2022/02/19/IntelliJ%20IDEA%20201933%20%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3-intellijidea201933cracked/</loc>
+        <loc>http://keepjolly.com/archives/intellijidea201933cracked.html</loc>
         <lastmod>2022-02-19T03:36:27.628Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

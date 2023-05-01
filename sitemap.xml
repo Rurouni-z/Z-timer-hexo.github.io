@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://example.com/post-sitemap.xml</loc>
+        <loc>http://keepjolly.com/post-sitemap.xml</loc>
         <lastmod>2023-04-28T13:07:26.306Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/page-sitemap.xml</loc>
+        <loc>http://keepjolly.com/page-sitemap.xml</loc>
         <lastmod>2023-04-29T12:36:12.079Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/category-sitemap.xml</loc>
+        <loc>http://keepjolly.com/category-sitemap.xml</loc>
         <lastmod>2023-03-26T01:41:47.726Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://example.com/tag-sitemap.xml</loc>
+        <loc>http://keepjolly.com/tag-sitemap.xml</loc>
         <lastmod>2023-03-26T01:41:47.726Z</lastmod>
     </sitemap>
 
