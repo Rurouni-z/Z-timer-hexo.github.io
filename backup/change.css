@@ -1,0 +1,46 @@
+#nav-right{
+    flex:1 1 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    display: flex;
+    flex-wrap:nowrap;
+}
+/* https://yisous.xyz/posts/895003b5/#%E7%BD%91%E7%AB%99%E6%A0%87%E9%A2%98%E9%83%A8%E5%88%86%E7%9A%84%E5%A2%9E%E5%BC%BA%E7%89%88 */
+.nav-fixed #nav{
+    transform: translateY(58px)!important;
+    -webkit-transform: translateY(58px)!important;
+    -moz-transform: translateY(58px)!important;
+    -ms-transform: translateY(58px)!important;
+    -o-transform: translateY(58px)!important;
+}
+#nav{
+    transition: none!important;
+    -webkit-transition: none!important;
+    -moz-transition: none!important;
+    -ms-transition: none!important;
+    -o-transition: none!important;
+}
+
+/* 文章页背景 */
+/* .layout>#post {
+    background: rgba(255,255,255,0.9);
+}
+#aside-content #card-toc {
+
+    background: rgba(255,255,255,0.9);
+} */
+/* 所有页面背景 */
+/* #aside-content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    background: rgba(255,255,255,0.5);
+} */
+/*侧边卡片的透明度 */
+/* :root {
+  --card-bg: rgba(255, 255, 255, .7);
+} */
+/* 页脚透明 */
+/* #footer { */
+	/* 以下代表透明度为0.7 */
+	/* background: rgba(255,255,255, .0);
+} */
+
+ 
