@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Halo博客搭建---一个属于自己的网站 | MyBlog</title><meta name="author" content="Rurouni"><meta name="copyright" content="Rurouni"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概要：本博客使用Halo搭建，域名通过name.com进行购买，使用cloudflare进行cdn代理，服务器是阿里云的，对象存储用的是腾讯云的按量付费50g。 购买域名 首先，当然是买个域名啦，可以选择国内网址，但是要备案，好处就是国内比较便宜，备案也较为轻松，也可以选国外网址，不需要备案，而且更加随心所欲一点。 域名网址 我这里用的是name.com买的网址。这是我的分享链接，（购买会便宜36">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Halo博客搭建---一个属于自己的网站">
+<meta property="og:url" content="http://example.com/2022/03/19/Halo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA---%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99-halo-blog-build-a-website-of-your-own/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="概要：本博客使用Halo搭建，域名通过name.com进行购买，使用cloudflare进行cdn代理，服务器是阿里云的，对象存储用的是腾讯云的按量付费50g。 购买域名 首先，当然是买个域名啦，可以选择国内网址，但是要备案，好处就是国内比较便宜，备案也较为轻松，也可以选国外网址，不需要备案，而且更加随心所欲一点。 域名网址 我这里用的是name.com买的网址。这是我的分享链接，（购买会便宜36">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg">
+<meta property="article:published_time" content="2022-03-19T12:11:01.786Z">
+<meta property="article:modified_time" content="2022-03-28T10:19:32.685Z">
+<meta property="article:author" content="Rurouni">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="服务器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/03/19/Halo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA---%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99-halo-blog-build-a-website-of-your-own/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"Z1QBIVDX3I","apiKey":"1668f13b50de82ca6c66fd56130468b2","indexName":"my-hexo-blog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":700},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Rurouni","link":"链接: ","source":"来源: MyBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Halo博客搭建---一个属于自己的网站',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-28 18:19:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/change.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw hide"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><img class="site-icon" src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo%2Fweb_logo.png"/><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw hide"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Halo博客搭建---一个属于自己的网站</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-19T12:11:01.786Z" title="发表于 2022-03-19 20:11:01">2022-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-28T10:19:32.685Z" title="更新于 2022-03-28 18:19:32">2022-03-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><p>概要：本博客使用Halo搭建，域名通过name.com进行购买，使用cloudflare进行cdn代理，服务器是阿里云的，对象存储用的是腾讯云的按量付费50g。</p>
+<h2 id="购买域名">购买域名</h2>
+<p>首先，当然是买个域名啦，可以选择国内网址，但是要备案，好处就是国内比较便宜，备案也较为轻松，也可以选国外网址，不需要备案，而且更加随心所欲一点。</p>
+<h3 id="域名网址">域名网址</h3>
+<p>我这里用的是name.com买的网址。这是我的<a target="_blank" rel="noopener" href="https://www.name.com/zh-cn/referral/4777a0">分享链接</a>，（购买会便宜36，当然我也有点小利润）</p>
+<ol>
+<li>先输入你心仪的域名，<a target="_blank" rel="noopener" href="http://xn--keepjolly-k99p.com">如keepjolly.com</a>，他就会告诉你这个域名是否被购买，以及其他后缀的域名。.com后缀会稍微贵一些，其他域名会便宜点</li>
+</ol>
+<p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647478544371-b15bcc98-d75f-4518-b060-81b0e49a4489.png" alt="image.png"></p>
+<ol start="2">
+<li>点击加入购物车，然后点上面的购物车图标，（<s>如果点击结账，就会跳转到下面的界面，然后点击购物车）</s></li>
+</ol>
+<p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647478668852-d7030955-903f-4fec-a4d2-1acbe13a5cf2.png" alt="image.png"><br>
+这是点击结账的页面。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647478849173-0d1cebce-d2f6-4012-8b9e-d85a3dd64842.png" alt="image.png"></p>
+<ol start="3">
+<li>选择你要购买几年，如果有信心运营下去的话，建议多买几年，首先买一年试试水吧</li>
+</ol>
+<p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647479212000-92c67d24-48fe-420a-a3ef-fabb6bf6785b.png" alt="image.png"><br>
+促销码可以Google一下，我当初便宜了一年的Advanced Security + Privacy</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.pigji.com/970.html"><strong>促销码</strong></a>**：**PRIVACYPLEASE 减去那个附加项、RENEW 续费便宜15%<br>
+联合使用的话，先renew，然后在域名管理页再续费privacy，（目前还没试过）</p>
+</blockquote>
+<p>然后就可以付款了。</p>
+<ol start="5">
+<li>付款可以选择支付宝，然后就不截图了。</li>
+</ol>
+<ul>
+<li>买后之后（因为我是买后再写博文，所以没有买后的跳转页面，我这里直接放上域名管理页面）</li>
+</ul>
+<ol start="6">
+<li>这是域名管理页面，一般都是自动勾选上的，自动续订需要绑信用卡，下面的域名服务器等下要替换成cloudflare。</li>
+</ol>
+<p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647479816157-6c619eb3-6ac5-481d-9b20-01e8008d90c0.png" alt="image.png"></p>
+<ol start="8">
+<li>域名购买就到这里结束了</li>
+</ol>
+<h2 id="给域名套上cdn">给域名套上cdn</h2>
+<p>因为我的是国外域名，所以弄了个国外的cdn，如果是在国内购买域名，建议选国内的cdn（另外也有可能买服务器或者域名会送cdn服务）。（另外有大佬也说，套国外的cdn对国内会影响访问速度，而且也不需要ddos防御，毕竟小网站，但最后反正也免费，索性就配置一下）。</p>
+<h3 id="注册cloudflare">注册cloudflare</h3>
+<p>这里就不说了，这都不会建议别套cdn了😂。这个cdn网站还有中文</p>
+<h3 id="添加要加速的网站">添加要加速的网站</h3>
+<p>就是添加站点把你的网址输入进去即可。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647678898220-72a625f4-fe2e-4b61-8283-7aa7a529a922.png" alt="image.png"><br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647678926632-fc7efa34-73c8-4b13-a493-44fb7d8d9f5b.png" alt="image.png"></p>
+<h3 id="选择付费计划">选择付费计划</h3>
+<p>白嫖怪当然选择免费计划啦，主要就是防止ddos攻击。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647678991846-3de9b528-b0d0-442d-8baf-56bbf709784a.png" alt="image.png"><br>
+如果是国外的域名购买网站如<strong>namesilo</strong>、<strong>godaddy</strong>，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82909515">Link here</a><br>
+这里展示一下name、和阿里云的。</p>
+<h3 id="查看dns记录">查看dns记录</h3>
+<p>建议也用上面那个<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82909515">链接</a>，这里我因为点了返回，直接进入下一步了。</p>
+<h3 id="完成名称服务器设置">完成名称服务器设置</h3>
+<p>复制cloudflare的名称服务器，一共两条<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647679682736-dcf7e621-ad70-43a8-836e-8cd77d8ca9a1.png" alt="image.png"></p>
+<h4 id="name-com"><a target="_blank" rel="noopener" href="http://name.com">name.com</a></h4>
+<p>选择最下面的管理域名服务器</p>
+<h3 id=""><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647479816157-6c619eb3-6ac5-481d-9b20-01e8008d90c0.png" alt=""></h3>
+<p>添加刚刚复制的那两条，添加完成后，cloudflare就能托管你的网站了<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647679555669-05837aa9-f21d-47ba-a048-37bca41fe6d0.png" alt="image.png"></p>
+<h4 id="aliyun-com"><a target="_blank" rel="noopener" href="http://aliyun.com">aliyun.com</a></h4>
+<p>首先当然是登录啦，登陆成功后点击第一步的“我的阿里云”。然后如果你买了域名的话，在第二步应该能看见你的域名“控制台”，点进去。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647679994486-135aa6df-07e6-4841-9378-34045cbe627b.png" alt="image.png"><br>
+然后在域名列表里，点击你的网址，（国内记得备案哦，备案就不介绍了，网上查一查吧）<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647680196991-8e454160-3098-49af-a2ee-7442090604e3.png" alt="image.png"><br>
+点击“修改DNS”<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647680333113-1d31d213-4aa2-4363-8e2f-d756437c988c.png" alt="image.png"><br>
+复制cloudflare 的名称服务器，cv就完事了<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647680378484-860a8dab-4a40-4ce6-8175-afe678410d40.png" alt="image.png"></p>
+<h3 id="cloudflare快速入门指南">cloudflare快速入门指南</h3>
+<p><img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647681427107-a50d0a29-5875-4f05-9321-7a11301cc24c.png" alt="image.png"><br>
+全选是就行了，最后就是这样子。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647681454195-05f18d32-f98b-4ec7-bf7e-f8f8a0c677f8.png" alt="image.png"></p>
+<h3 id="其他设置">其他设置</h3>
+<p>参考上面的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82909515">link</a>（快速入门指南以及包括了大部分了）。另外，如果需要进行端到端加密的话，<a target="_blank" rel="noopener" href="https://developers.cloudflare.com/ssl/get-started/">官网</a>是这样子介绍的，我因为有段时间没弄这篇博客，有点忘记怎么弄了。这里就给个<a target="_blank" rel="noopener" href="https://www.keepjolly.com/archives/openssl-install-and-get-sslcert">本机生成SSL证书</a>，（好像大概率用的是宝塔自动产生的SSL证书），但是具体怎么套入，<em>看看官网，或者我帮你试试</em>。另外自己的域名购买网站记得加上SSL证书，这里也不说了，应该把本机生成的放进去就好了，或者宝塔里的，（时间有点久，不知道怎么操作了，抱歉）。另外看到阿里云有付费的SSL证书，Google后，其实免费的对于个人博客来说就够了。</p>
+<h4 id="阿里云的SSL证书签发">阿里云的SSL证书签发</h4>
+<p>点击开启SSL证书<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647689548378-792215e1-893a-4eba-b633-1d4509323520.png" alt="image.png"><br>
+买免费的就行了<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647689583445-23346d75-42af-43ec-bfbb-98cabf4b4724.png" alt="image.png"><br>
+点证书申请，然后输入你的域名，然后下一步<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647689690408-355ef6bb-c990-4560-9eec-370a866a25cf.png" alt="image.png"><br>
+然后在cloudflare的DNS记录里新建txt，对应cv就行了。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647689819411-a415d0f3-17d4-4b0d-8832-f2dccfd9380a.png" alt="image.png"></p>
+<h2 id="购买服务器">购买服务器</h2>
+<p>这里选的是<a target="_blank" rel="noopener" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=d2oiabj6">阿里云</a>的，如果需要国外的，点更多商品。下面的点开后，我选的是ECS突发性能型 t6 - 新加坡，下面是我的配置，因为没有新用户，很贵。<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/blog/halo/1647690726368-f4597509-3045-434b-bd9a-b55fc7df890e.png" alt="image.png"></p>
+<h2 id="搭建博客">搭建博客</h2>
+<p>这里推荐一个up，<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JN411Q7Na?p=4">BV1JN411Q7Na</a>（<a target="_blank" rel="noopener" href="https://www.wjcms.net/archives/%E4%BB%8E%E9%9B%B6%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2halo%E5%8D%9A%E5%AE%A2%E5%8C%85%E5%90%ABhalo%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE">文字版</a>建议两者结合），我时隔已久，而且已经是装完的状态了，所以无法展示了。按照他的来可以搭建出来Halo的博客，但后来我记得部署完halo后，halo页面无法显示，可能按照清缓存，重启服务器，等待一会儿就行了。<br>
+啊啊啊，原本想从0开始搭建出自己的博客来着，属于是推着推着就忘了好多。如果有需要，我可以帮你尝试一下建博客（不保证行不行，因为我也是看网上教程来的）。</p>
+<h2 id="对象存储">对象存储</h2>
+<p>国外买国外的存储桶，记得开防盗链，然后用<a target="_blank" rel="noopener" href="https://github.com/PicGo/PicGo-Core">picgo</a>管理，插件是<a target="_blank" rel="noopener" href="https://github.com/PicGo/picgo-plugin-pic-migrater/blob/master/README_CN.md">picgo-plugin-pic-migrater</a>它可以将语雀导出的markdown里的图片自动上传到存储桶，并新建一个.md文件，如果导入图片不显示，可能是你的链接没有https://。</p>
+<h2 id="博客主题">博客主题</h2>
+<p><a target="_blank" rel="noopener" href="https://qinhua.github.io/halo-theme-joe2.0/#/">joe2.0</a></p>
+<h2 id="搜索引擎检索">搜索引擎检索</h2>
+<p>这里只在<a target="_blank" rel="noopener" href="https://www.bing.com/webmasters/home">必应</a>（可以直接从你的Google里导入，但还是得把你网站地图放进去<a target="_blank" rel="noopener" href="https://www.xn--6qqv7i2xdt95b/sitemap.xml">https://www.你的域名/sitemap.xml</a> ）、<a target="_blank" rel="noopener" href="https://search.google.com/">Google</a>、<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/dashboard">百度</a>上弄了，<br>
+<img src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo%2Fblog%2Fhalo%2Fgoogle-search.jpg" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Rurouni</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/03/19/Halo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA---%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99-halo-blog-build-a-website-of-your-own/">http://example.com/2022/03/19/Halo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA---%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99-halo-blog-build-a-website-of-your-own/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="post-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></div><div class="post_share"><div class="social-share" data-image="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/profile%20photo_1647067705220.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/nomoney" target="_blank"><img class="post-qr-code-img" src="https://halo-1310118673.cos.ap-singapore.myqcloud.com/halo/nomoney" alt="真的有人会打赏吗"/></a><div class="post-qr-code-desc">真的有人会打赏吗</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/16/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E9%9F%B3%E4%B9%90-gu-ge-liu-lan-qi-wu-fa-bo-fang-yin-le/" title="谷歌浏览器无法播放音乐"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">谷歌浏览器无法播放音乐</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/26/leetcode%E4%B8%89%E6%97%A5%E4%B8%89%E9%A2%98-leetcode-one-question-per-day/" title="(leetcode) 三日三题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">(leetcode) 三日三题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/13/2022%E5%B9%B4%E7%90%90%E8%A8%80-postgraduate-talk/" title="2022年琐言"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-13</div><div class="title">2022年琐言</div></div></a></div><div><a href="/2022/05/31/picgo%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E4%B8%8D%E6%88%90%E5%8A%9F-picgo-install-plugin/" title="picgo安装插件不成功"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-31</div><div class="title">picgo安装插件不成功</div></div></a></div><div><a href="/2022/05/31/picgo%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95+%E8%85%BE%E8%AE%AF%E4%BA%91-picgo-jin-jie-wan-fa--teng-xun-yun/" title="picgo进阶玩法+腾讯云"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-31</div><div class="title">picgo进阶玩法+腾讯云</div></div></a></div><div><a href="/2022/10/16/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A2%98-data-analysis/" title="数学建模-数据分析题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">数学建模-数据分析题</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="toc-number">1.</span> <span class="toc-text">购买域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.</span> <span class="toc-text">域名网址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E5%9F%9F%E5%90%8D%E5%A5%97%E4%B8%8Acdn"><span class="toc-number">2.</span> <span class="toc-text">给域名套上cdn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8Ccloudflare"><span class="toc-number">2.1.</span> <span class="toc-text">注册cloudflare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%A6%81%E5%8A%A0%E9%80%9F%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">2.2.</span> <span class="toc-text">添加要加速的网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E4%BB%98%E8%B4%B9%E8%AE%A1%E5%88%92"><span class="toc-number">2.3.</span> <span class="toc-text">选择付费计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bdns%E8%AE%B0%E5%BD%95"><span class="toc-number">2.4.</span> <span class="toc-text">查看dns记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.5.</span> <span class="toc-text">完成名称服务器设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#name-com"><span class="toc-number">2.5.1.</span> <span class="toc-text">name.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.6.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#aliyun-com"><span class="toc-number">2.6.1.</span> <span class="toc-text">aliyun.com</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cloudflare%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97"><span class="toc-number">2.7.</span> <span class="toc-text">cloudflare快速入门指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.8.</span> <span class="toc-text">其他设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91%E7%9A%84SSL%E8%AF%81%E4%B9%A6%E7%AD%BE%E5%8F%91"><span class="toc-number">2.8.1.</span> <span class="toc-text">阿里云的SSL证书签发</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">购买服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.</span> <span class="toc-text">搭建博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8"><span class="toc-number">5.</span> <span class="toc-text">对象存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">博客主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%A3%80%E7%B4%A2"><span class="toc-number">7.</span> <span class="toc-text">搜索引擎检索</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Rurouni</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://www.keepjolly.com/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><script data-pjax type="text/javascript" src="/js/change.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>
